@@ -1,16 +1,6 @@
 import postinumerot
 
 
-ERIKOISTAPAUKSET = {
-    "43800": "KIVIJÄRVI",
-    "91150": "YLI-OLHAVA",
-    "65374": "SMART POST",
-    "12345": "EI OLEMASSA",
-    "74704": "SMARTPOST",
-    "96204": "SMART-POST"
-}
-
-
 def test_postitoimipaikan_nimella_yksi_postinumero():
     tulos = {
         "TARTTILA": ["37770"]
@@ -49,14 +39,6 @@ def test_etsi_toimipaikat_erilaisilla_kirjoitusasuilla():
         "jaalanka", tulos) == ["91740"]
     assert postinumerot.haeNumerot(
         "jaaLAnka", tulos) == ["91740"]
-
-
-def test_postinumerot_omalla_datalla(mocker):
-    oma_data = ERIKOISTAPAUKSET
-    mocker.patch('http_pyynto.hae_postinumerot', return_value=oma_data)
-    tulos = postinumerot.etsi_toimipaikka('12345')
-
-    assert tulos == 'EI OLEMASSA'
 
 
 # testataan toimivaa ratkaisua smart post bugiin
