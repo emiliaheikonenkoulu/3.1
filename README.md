@@ -1,2 +1,2 @@
 # 3.1
-<p>https://github.com/theikkila/postinumerot</p>
+<p>https://raw.githubusercontent.com/theikkila/postinumerot/master/postcode_map_light.json</p>
